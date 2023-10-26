@@ -33,8 +33,8 @@ public class PaymentTest {
     public void testDHLDelivery() {
         PayPalCreditStrategy payPalCreditStrategy 
             = new PayPalCreditStrategy();
-        double PRICE = 50;
-        payPalCreditStrategy.pay(PRICE);
+        double price = 50;
+        payPalCreditStrategy.pay(price);
         Assertions.assertEquals("Pay by Pay Pal: 50.0\r\n",
                 outContent.toString());
     }
@@ -43,8 +43,8 @@ public class PaymentTest {
     public void testPostDelivery() {
         CreditCardPaymentStrategy creditCardPaymentStrategy 
             = new CreditCardPaymentStrategy();
-        double PRICE = 50;
-        creditCardPaymentStrategy.pay(PRICE);
+        double price = 50;
+        creditCardPaymentStrategy.pay(price);
         Assertions.assertEquals("Pay by Credit Card: 50.0\r\n",
                 outContent.toString());
     }

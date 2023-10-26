@@ -6,8 +6,8 @@ public class FlowerBucket extends Item {
     }
 
     public double price() {
-        int PRICE = 30;
-        return PRICE;
+        int price = 30;
+        return price;
     }
 
     public void searchFlower() {

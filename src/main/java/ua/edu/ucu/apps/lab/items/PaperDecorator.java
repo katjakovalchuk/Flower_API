@@ -18,14 +18,14 @@ public class PaperDecorator extends ItemDecorator {
     }
 
     public double getPrice() {
-        int PRICE = 13;
-        return PRICE + item.price();
+        int price = 13;
+        return price + item.price();
     }
 
     @Override
     public double price() {
-        int PRICE = 13;
-        return PRICE;
+        int price = 13;
+        return price;
     }
 
 }

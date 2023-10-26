@@ -2,13 +2,9 @@ package ua.edu.ucu.apps.lab.flower;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import ua.edu.ucu.apps.lab.flower.Flower;
-import ua.edu.ucu.apps.lab.flower.FlowerType;
 
 @Service
 public class FlowerService {
@@ -32,7 +28,10 @@ public class FlowerService {
     public List<Flower> getFlowers() {
         // return flowerRepository.findAll();
         // return listOfFlowers;
-        return List.of(new Flower(FlowerColor.RED, (double) 10, (double) 0.8, FlowerType.ROSE));
+        double price = 10;
+        double sepalLength = 0.8;
+        return List.of(new Flower(FlowerColor.RED,
+                (double) price, (double) sepalLength, FlowerType.ROSE));
     }
 
     public void addFlower(Flower flower) {

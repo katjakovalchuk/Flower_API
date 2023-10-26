@@ -2,14 +2,18 @@ package ua.edu.ucu.apps.lab.store;
 
 import java.util.LinkedList;
 
+import lombok.Getter;
+import lombok.Setter;
 import ua.edu.ucu.apps.lab.delivery.Delivery;
 import ua.edu.ucu.apps.lab.items.Item;
 import ua.edu.ucu.apps.lab.payment.Payment;
 
+@Getter
+@Setter
 public class Order {
-    public LinkedList<Item> items;
-    public Payment payment;
-    public Delivery delivery;
+    private LinkedList<Item> items;
+    private Payment payment;
+    private Delivery delivery;
 
     public Order(LinkedList items, Payment payment, Delivery delivery) {
         this.items = items;

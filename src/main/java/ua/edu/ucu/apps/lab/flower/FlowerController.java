@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.Getter;
+import lombok.Setter;
 import ua.edu.ucu.apps.lab.delivery.DHLDeliveryStrategy;
 import ua.edu.ucu.apps.lab.delivery.Delivery;
 import ua.edu.ucu.apps.lab.delivery.PostDeliveryStrategy;
@@ -17,14 +19,16 @@ import ua.edu.ucu.apps.lab.payment.CreditCardPaymentStrategy;
 import ua.edu.ucu.apps.lab.payment.PayPalCreditStrategy;
 import ua.edu.ucu.apps.lab.payment.Payment;
 
+@Getter
+@Setter
 @RestController
 @RequestMapping("/api/flowers/")
 public class FlowerController {
 
-    public final FlowerService flowerService;
-    public Payment payment;
-    public List orderList;
-    public Delivery delivery;
+    private final FlowerService flowerService;
+    private Payment payment;
+    private List orderList;
+    private Delivery delivery;
 
     @Autowired
     public FlowerController(FlowerService flowerService) {
@@ -58,30 +62,32 @@ public class FlowerController {
 
     @PostMapping("addFlowerBucket/")
     public void addFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
-        flowerService.addFlowerBucket(FlowerBucket.jsonToFlowerBucket(jsonMap));
+        flowerService.addFlowerBucket(
+                FlowerBucket.jsonToFlowerBucket(jsonMap));
     }
 
     @PostMapping("removeFlowerBucket/")
     public void removeFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
-        flowerService.removeFlowerBucket(FlowerBucket.jsonToFlowerBucket(jsonMap));
+        flowerService.removeFlowerBucket(
+                FlowerBucket.jsonToFlowerBucket(jsonMap));
     }
 
     @PostMapping("setPaymentSystem/")
     public void setPaymentSystem(@RequestBody Map<String, Object> jsonMap) {
-        if (jsonMap.get("paymentSystem") == "paypal") {
+        if (jsonMap.get("paymentSystem").equals("paypal")) {
             payment = new PayPalCreditStrategy();
         }
-        if (jsonMap.get("paymentSystem") == "creditCard") {
+        if (jsonMap.get("paymentSystem").equals("creditCard")) {
             payment = new CreditCardPaymentStrategy();
         }
     }
 
     @PostMapping("setDeliveryStrategy/")
     public void setDeliveryStrategy(@RequestBody Map<String, Object> jsonMap) {
-        if (jsonMap.get("deliveryStrategy") == "DHL") {
+        if (jsonMap.get("deliveryStrategy").equals("DHL")) {
             delivery = new DHLDeliveryStrategy();
         }
-        if (jsonMap.get("deliveryStrategy") == "Post") {
+        if (jsonMap.get("deliveryStrategy").equals("Post")) {
             delivery = new PostDeliveryStrategy();
         }
     }

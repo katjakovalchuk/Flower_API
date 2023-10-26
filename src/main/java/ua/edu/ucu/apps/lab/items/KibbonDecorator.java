@@ -1,16 +1,21 @@
 package ua.edu.ucu.apps.lab.items;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class KibbonDecorator extends ItemDecorator {
+    private Item item;
 
     public KibbonDecorator(String description) {
         super(description);
     }
 
-    public Item item;
-
     @Override
     public double price() {
-        return 40;
+        int price = 40;
+        return price;
     }
 
     @Override
@@ -19,6 +24,7 @@ public class KibbonDecorator extends ItemDecorator {
     }
 
     public double getPrice() {
-        return 40 + item.price();
+        int price = 40;
+        return price + item.price();
     }
 }

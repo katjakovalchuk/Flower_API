@@ -20,7 +20,8 @@ public class Flower {
     private double sepalLength;
     private FlowerType flowerType;
 
-    public Flower(double sepalLength, double price, FlowerColor color, FlowerType flowerType) {
+    public Flower(double sepalLength, double price,
+            FlowerColor color, FlowerType flowerType) {
         this.sepalLength = sepalLength;
         this.price = price;
         this.color = color;
@@ -36,8 +37,11 @@ public class Flower {
     }
 
     public static Flower jsonToFlower(Map<String, Object> json) {
-        Flower flower = new Flower((double) json.get("sepal_length"), (double) json.get("price"),
-                (FlowerColor) json.get("color"), (FlowerType) json.get("type"));
+        Flower flower = new Flower(
+                (double) json.get("sepal_length"),
+                (double) json.get("price"),
+                (FlowerColor) json.get("color"),
+                (FlowerType) json.get("type"));
         return flower;
 
     }

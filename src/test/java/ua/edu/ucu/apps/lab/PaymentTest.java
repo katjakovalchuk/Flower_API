@@ -14,10 +14,8 @@ import org.junit.jupiter.api.Assertions;
 
 public class PaymentTest {
 
-    private final ByteArrayOutputStream outContent =
-        new ByteArrayOutputStream();
-    private final PrintStream originalOut = 
-        System.out;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
     @BeforeEach
     public void setUpStreams() {
@@ -31,19 +29,21 @@ public class PaymentTest {
 
     @Test
     public void testDHLDelivery() {
-        PayPalCreditStrategy payPalCreditStrategy
-             = new PayPalCreditStrategy();
-        payPalCreditStrategy.pay(50);
+        PayPalCreditStrategy payPalCreditStrategy 
+            = new PayPalCreditStrategy();
+        double price = 50;
+        payPalCreditStrategy.pay(price);
         Assertions.assertEquals("Pay by Pay Pal: 50.0\r\n",
-             outContent.toString());
+                outContent.toString());
     }
 
     @Test
     public void testPostDelivery() {
         CreditCardPaymentStrategy creditCardPaymentStrategy 
             = new CreditCardPaymentStrategy();
-        creditCardPaymentStrategy.pay(50);
+        double price = 50;
+        creditCardPaymentStrategy.pay(price);
         Assertions.assertEquals("Pay by Credit Card: 50.0\r\n",
-             outContent.toString());
+                outContent.toString());
     }
 }

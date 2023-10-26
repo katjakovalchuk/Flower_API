@@ -1,12 +1,16 @@
 package ua.edu.ucu.apps.lab.items;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class BucketDecorator extends ItemDecorator {
+    private Item item;
 
     public BucketDecorator(String description) {
         super(description);
     }
-
-    public Item item;
 
     @Override
     public String getDescription() {
@@ -15,11 +19,13 @@ public class BucketDecorator extends ItemDecorator {
 
     @Override
     public double price() {
-        return 4;
+        int price = 4;
+        return price;
     }
 
     public double getPrice() {
-        return 4 + item.price();
+        int price = 4;
+        return price + item.price();
     }
 
 }

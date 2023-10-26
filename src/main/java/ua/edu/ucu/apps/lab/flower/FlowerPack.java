@@ -11,13 +11,15 @@ public class FlowerPack {
     @Setter
     private int quantity = 1;
 
-    public FlowerPack(Flower flower, int quantity2) {
+    public FlowerPack(Flower flower, int quantity) {
         this.flower = flower;
-        this.setQuantity(quantity2);
+        this.setQuantity(quantity);
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity <= 0 ? 1 : quantity;
+        this.quantity = quantity <= 0
+            ? 1
+            : quantity;
     }
 
     public double getPrice() {
@@ -25,8 +27,9 @@ public class FlowerPack {
     };
 
     public static FlowerPack jsonToFlowerpack(Map<String, Object> json) {
-        FlowerPack flowerPack = new FlowerPack((Flower) Flower.jsonToFlower((Map<String, Object>) json.get("flower")),
-                (int) json.get("quantity"));
+        FlowerPack flowerPack = new FlowerPack((Flower) 
+            Flower.jsonToFlower((Map<String, Object>) json.get("flower")),
+            (int) json.get("quantity"));
         return flowerPack;
     }
 }

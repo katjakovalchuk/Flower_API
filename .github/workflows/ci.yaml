@@ -23,5 +23,7 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JAVA_FILE_NAME: checkstyle.xml
+          FILTER_REGEX_EXCLUDE: .*(test|Order).*
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots package
+

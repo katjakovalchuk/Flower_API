@@ -1,10 +1,6 @@
 package ua.edu.ucu.apps.lab.flower;
 
 import java.util.Map;
-
-// import org.springframework.data.annotation.Id;
-
-// import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

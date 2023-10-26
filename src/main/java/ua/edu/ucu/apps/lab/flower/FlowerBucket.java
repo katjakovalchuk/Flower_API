@@ -31,8 +31,8 @@ public class FlowerBucket {
 
     public double getPrice() {
         double price = 0;
-        for (FlowerPack flowerPack : flowerPacks) {
-            price += flowerPack.getPrice();
+        for (FlowerPack flowerPac : flowerPacks) {
+            price += flowerPac.getPrice();
         }
         return price;
     }

@@ -19,13 +19,13 @@ public class BucketDecorator extends ItemDecorator {
 
     @Override
     public double price() {
-        int price = 4;
-        return price;
-    }
+        int PRICE = 4;
+        return PRICE;
+    } 
 
     public double getPrice() {
-        int price = 4;
-        return price + item.price();
+        int PRICE = 4;
+        return PRICE + item.price();
     }
 
 }

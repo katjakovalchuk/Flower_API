@@ -14,8 +14,8 @@ public class KibbonDecorator extends ItemDecorator {
 
     @Override
     public double price() {
-        int price = 40;
-        return price;
+        int PRICE = 40;
+        return PRICE;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class KibbonDecorator extends ItemDecorator {
     }
 
     public double getPrice() {
-        int price = 40;
-        return price + item.price();
+        int PRICE = 40;
+        return PRICE + item.price();
     }
 }

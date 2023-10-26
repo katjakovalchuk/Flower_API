@@ -28,10 +28,12 @@ public class FlowerService {
     public List<Flower> getFlowers() {
         // return flowerRepository.findAll();
         // return listOfFlowers;
-        double price = 10;
-        double sepalLength = 0.8;
+        double PRICE = 10;
+        double SEPALLENGHT = 0.8;
         return List.of(new Flower(FlowerColor.RED,
-                (double) price, (double) sepalLength, FlowerType.ROSE));
+                (double) PRICE, 
+                (double) SEPALLENGHT,
+                FlowerType.ROSE));
     }
 
     public void addFlower(Flower flower) {

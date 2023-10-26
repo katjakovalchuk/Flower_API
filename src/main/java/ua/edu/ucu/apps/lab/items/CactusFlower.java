@@ -8,8 +8,8 @@ public class CactusFlower extends Item {
 
     @Override
     public double price() {
-        int price = 35;
-        return price;
+        int PRICE = 35;
+        return PRICE;
     }
 
     @Override

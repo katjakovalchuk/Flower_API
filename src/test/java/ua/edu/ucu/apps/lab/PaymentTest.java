@@ -30,7 +30,7 @@ public class PaymentTest {
     }
 
     @Test
-    public void testDHLDelivery() {
+    public void testPapyPal() {
         PayPalCreditStrategy payPalCreditStrategy 
             = new PayPalCreditStrategy();
         double price = 50;
@@ -40,7 +40,7 @@ public class PaymentTest {
     }
 
     @Test
-    public void testPostDelivery() {
+    public void testCreditCard() {
         CreditCardPaymentStrategy creditCardPaymentStrategy 
             = new CreditCardPaymentStrategy();
         double price = 50;

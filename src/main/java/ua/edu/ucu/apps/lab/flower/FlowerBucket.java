@@ -25,6 +25,9 @@ public class FlowerBucket {
         this.quantity = quantity;
     }
 
+    public FlowerBucket() {
+    }
+
     public void addFlowerPack(FlowerPack flowerPac) {
         flowerPacks.add(flowerPac);
     }

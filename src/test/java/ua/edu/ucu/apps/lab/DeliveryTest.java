@@ -16,10 +16,8 @@ import org.junit.jupiter.api.Assertions;
 
 public class DeliveryTest {
 
-    private final ByteArrayOutputStream outContent
-         = new ByteArrayOutputStream();
-    private final PrintStream originalOut 
-        = System.out;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
 
     @BeforeEach
     public void setUpStreams() {
@@ -33,23 +31,17 @@ public class DeliveryTest {
 
     @Test
     public void testDHLDelivery() {
-        DHLDeliveryStrategy dHLstrategy = 
-            new DHLDeliveryStrategy();
-        Item item = 
-            new CactusFlower("cactus");
-        dHLstrategy.deliver(item);
-        Assertions.assertEquals("Deliver by DHL: cactus.\r\n",
-             outContent.toString());
+        DHLDeliveryStrategy dHLstrategy = new DHLDeliveryStrategy();
+        Item item = new CactusFlower("cactus");
+        String deliveryResult = dHLstrategy.deliver(item);
+        Assertions.assertEquals("Deliver by DHL: cactus.", deliveryResult);
     }
 
     @Test
     public void testPostDelivery() {
-        PostDeliveryStrategy postDeliveryStrategy = 
-            new PostDeliveryStrategy();
-        Item item = 
-            new CactusFlower("cactus");
-        postDeliveryStrategy.deliver(item);
-        Assertions.assertEquals("Deliver by Post: cactus.\r\n",
-             outContent.toString());
+        PostDeliveryStrategy postDeliveryStrategy = new PostDeliveryStrategy();
+        Item item = new CactusFlower("cactus");
+        String deliveryResult = postDeliveryStrategy.deliver(item);
+        Assertions.assertEquals("Deliver by Post: cactus.", deliveryResult);
     }
 }

@@ -1,22 +1,15 @@
 package ua.edu.ucu.apps.lab.flower;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.Getter;
 import lombok.Setter;
-import ua.edu.ucu.apps.lab.delivery.DHLDeliveryStrategy;
 import ua.edu.ucu.apps.lab.delivery.Delivery;
-import ua.edu.ucu.apps.lab.delivery.PostDeliveryStrategy;
-import ua.edu.ucu.apps.lab.payment.CreditCardPaymentStrategy;
-import ua.edu.ucu.apps.lab.payment.PayPalCreditStrategy;
 import ua.edu.ucu.apps.lab.payment.Payment;
 
 @Getter

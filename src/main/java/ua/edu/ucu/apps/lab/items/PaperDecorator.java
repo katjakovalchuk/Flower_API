@@ -12,7 +12,7 @@ public class PaperDecorator extends AbstractDecorator {
     private Item item;
     private int decoratorPrice = 13;
 
-    public PaperDecorator(org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item item2) {
+    public PaperDecorator(Item item2) {
         super(item2);
     }
 

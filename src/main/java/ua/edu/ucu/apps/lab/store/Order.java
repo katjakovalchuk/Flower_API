@@ -7,6 +7,7 @@ import lombok.Setter;
 import ua.edu.ucu.apps.lab.delivery.Delivery;
 import ua.edu.ucu.apps.lab.items.Item;
 import ua.edu.ucu.apps.lab.payment.Payment;
+import ua.edu.ucu.apps.lab.user.AppUser;
 
 @Getter
 @Setter
@@ -14,6 +15,7 @@ public class Order {
     private LinkedList<Item> items;
     private Payment payment;
     private Delivery delivery;
+    private LinkedList<AppUser> users;
 
     public Order(LinkedList items, Payment payment, Delivery delivery) {
         this.items = items;
@@ -47,4 +49,16 @@ public class Order {
     public void removeItem(Item item) {
         items.remove(item);
     }
+
+    public void addUser(AppUser user) {
+        users.add(user);
+    }
+
+    public void removeUser(AppUser user) {
+        users.remove(user);
+    }
+
+    public void notifyUsers() {
+    }
+
 }

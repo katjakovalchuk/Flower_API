@@ -20,13 +20,13 @@ public class FlowerPack {
 
     public double getPrice() {
         return quantity * flower.getPrice();
-    };
+    };}
 
-    public static FlowerPack jsonToFlowerpack(Map<String, Object> json) {
-        FlowerPack flowerPack = new FlowerPack(
-            (Flower) Flower.jsonToFlower((Map<String, Object>)
-            json.get("flower")),
-            (int) json.get("quantity"));
-        return flowerPack;
-    }
-}
+//     public static FlowerPack jsonToFlowerpack(Map<String, Object> json) {
+//         FlowerPack flowerPack = new FlowerPack(
+//             (Flower) Flower.jsonToFlower((Map<String, Object>)
+//             json.get("flower")),
+//             (int) json.get("quantity"));
+//         return flowerPack;
+//     }
+// }

@@ -12,8 +12,8 @@ public class FlowerService {
     @Autowired
     public FlowerService(FlowerRepository flowerRepository) {
         this.flowerRepository = flowerRepository;
-
     }
+
     public List<Flower> getFlowers() {
         return flowerRepository.findAll();
     }
@@ -21,9 +21,8 @@ public class FlowerService {
     public void add(Flower flower) {
         flowerRepository.save(flower);
     }
-
 }
 // List.of(new Flower(FlowerColor.RED,
-               // (double) price, 
-               // (double) sepalLength,
-                // FlowerType.ROSE))
+// (double) price,
+// (double) sepalLength,
+// FlowerType.ROSE))

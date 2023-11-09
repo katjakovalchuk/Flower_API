@@ -1,9 +1,12 @@
 package ua.edu.ucu.apps.lab.flower;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,71 +31,79 @@ public class FlowerController {
         this.flowerService = flowerService;
     }
 
-    @GetMapping("list/")
+    @GetMapping("flower/")
     public List<Flower> getFlowers() {
+        System.out.println(flowerService.getFlowers());
         return flowerService.getFlowers();
-    }}
+    }
 
-//     @PostMapping("addFlower/")
-//     public void addFlower(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.addFlower(Flower.jsonToFlower(jsonMap));
-//     }
+    @PostMapping("flower/")
+    public void addFlower(@RequestBody Map<String, Object> json) {
+        flowerService.add(Flower.jsonToFlower(json));
+        System.out.println(flowerService.getFlowers());
+    }
+}
 
-//     @PostMapping("removeFlower/")
-//     public void removeFlower(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.removeFlower(Flower.jsonToFlower(jsonMap));
-//     }
+// @PostMapping("addFlower/")
+// public void addFlower(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.addFlower(Flower.jsonToFlower(jsonMap));
+// }
 
-//     @PostMapping("addFlowerPack/")
-//     public void addFlowerPack(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.addFlowerPack(FlowerPack.jsonToFlowerpack(jsonMap));
-//     }
+// @PostMapping("removeFlower/")
+// public void removeFlower(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.removeFlower(Flower.jsonToFlower(jsonMap));
+// }
 
-//     @PostMapping("removeFlowerPack/")
-//     public void removeFlowerPack(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.removeFlowerPack(FlowerPack.jsonToFlowerpack(jsonMap));
-//     }
+// @PostMapping("addFlowerPack/")
+// public void addFlowerPack(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.addFlowerPack(FlowerPack.jsonToFlowerpack(jsonMap));
+// }
 
-//     @PostMapping("addFlowerBucket/")
-//     public void addFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.addFlowerBucket(
-//                 FlowerBucket.jsonToFlowerBucket(jsonMap));
-//     }
+// @PostMapping("removeFlowerPack/")
+// public void removeFlowerPack(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.removeFlowerPack(FlowerPack.jsonToFlowerpack(jsonMap));
+// }
 
-//     @PostMapping("removeFlowerBucket/")
-//     public void removeFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
-//         flowerService.removeFlowerBucket(
-//                 FlowerBucket.jsonToFlowerBucket(jsonMap));
-//     }
+// @PostMapping("addFlowerBucket/")
+// public void addFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.addFlowerBucket(
+// FlowerBucket.jsonToFlowerBucket(jsonMap));
+// }
 
-//     @PostMapping("setPaymentSystem/")
-//     public void setPaymentSystem(@RequestBody Map<String, Object> jsonMap) {
-//         if (jsonMap.get("paymentSystem").equals("paypal")) {
-//             payment = new PayPalCreditStrategy();
-//         }
-//         if (jsonMap.get("paymentSystem").equals("creditCard")) {
-//             payment = new CreditCardPaymentStrategy();
-//         }
-//     }
+// @PostMapping("removeFlowerBucket/")
+// public void removeFlowerBucket(@RequestBody Map<String, Object> jsonMap) {
+// flowerService.removeFlowerBucket(
+// FlowerBucket.jsonToFlowerBucket(jsonMap));
+// }
 
-//     @PostMapping("setDeliveryStrategy/")
-//     public void setDeliveryStrategy(@RequestBody Map<String, Object> jsonMap) {
-//         if (jsonMap.get("deliveryStrategy").equals("DHL")) {
-//             delivery = new DHLDeliveryStrategy();
-//         }
-//         if (jsonMap.get("deliveryStrategy").equals("Post")) {
-//             delivery = new PostDeliveryStrategy();
-//         }
-//     }
+// @PostMapping("setPaymentSystem/")
+// public void setPaymentSystem(@RequestBody Map<String, Object> jsonMap) {
+// if (jsonMap.get("paymentSystem").equals("paypal")) {
+// payment = new PayPalCreditStrategy();
+// }
+// if (jsonMap.get("paymentSystem").equals("creditCard")) {
+// payment = new CreditCardPaymentStrategy();
+// }
+// }
 
-//     @PostMapping("addOrder/")
-//     public void addOrder(@RequestBody Map<String, Object> jsonMap) {
-//         orderList.add(jsonMap.get("order"));
-//     }
+// @PostMapping("setDeliveryStrategy/")
+// public void setDeliveryStrategy(@RequestBody Map<String, Object> jsonMap) {
+// if (jsonMap.get("deliveryStrategy").equals("DHL")) {
+// delivery = new DHLDeliveryStrategy();
+// }
+// if (jsonMap.get("deliveryStrategy").equals("Post")) {
+// delivery = new PostDeliveryStrategy();
+// }
+// }
 
-//     @PostMapping("removeOrder/")
-//     public void removeOrder(@RequestBody Map<String, Object> jsonMap) {
-//         orderList.remove(jsonMap.get("order"));
-//     }
+// @PostMapping("addOrder/")
+// public void addOrder(@RequestBody Map<String, Object> jsonMap) {
+// orderList.add(jsonMap.get("order"));
+// }
+
+// @PostMapping("removeOrder/")
+// public void removeOrder(@RequestBody Map<String, Object> jsonMap) {
+// orderList.remove(jsonMap.get("order"));
+// }
 
 // }

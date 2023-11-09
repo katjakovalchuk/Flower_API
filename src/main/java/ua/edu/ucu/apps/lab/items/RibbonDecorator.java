@@ -8,11 +8,10 @@ import ua.edu.ucu.apps.lab.flower.FlowerBucket;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class RibbonDecorator extends AbstractDecorator{
     private Item item;
     private int decoratorPrice = 40;
-    public RibbonDecorator(org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item item2) {
+    public RibbonDecorator(Item item2) {
         super(item2);
     }
 
@@ -23,13 +22,11 @@ public class RibbonDecorator extends AbstractDecorator{
 
     @Override
     public String getDescription() {
-        return "Kibbon Decoration.";
+        return "Ribbon Decoration.";
     }
 
     public double getPrice() {
         return decoratorPrice + item.price();
     }
 
-    public RibbonDecorator(FlowerBucket item2) {
-    }
 }

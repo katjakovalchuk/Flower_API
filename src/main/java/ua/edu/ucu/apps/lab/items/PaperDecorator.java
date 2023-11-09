@@ -7,7 +7,6 @@ import ua.edu.ucu.apps.lab.flower.FlowerBucket;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class PaperDecorator extends AbstractDecorator {
     private Item item;
     private int decoratorPrice = 13;
@@ -29,9 +28,6 @@ public class PaperDecorator extends AbstractDecorator {
     @Override
     public double price() {
         return decoratorPrice;
-    }
-
-    public PaperDecorator(FlowerBucket item2) {
     }
 
 }

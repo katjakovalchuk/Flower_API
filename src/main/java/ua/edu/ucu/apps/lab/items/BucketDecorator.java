@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class BucketDecorator extends AbstractDecorator {
     private Item item;
     private int decotratorPrice = 4;

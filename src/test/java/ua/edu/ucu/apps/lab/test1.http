@@ -1,0 +1,10 @@
+GET https://oop-course.herokuapp.com/api/users/
+
+###
+POST https://oop-course.herokuapp.com/api/users/
+Content-Type: application/json
+
+{
+  "email": "oleksii.mytnyk@ucu.edu.ua",
+  "dob": "2004-01-30"
+}

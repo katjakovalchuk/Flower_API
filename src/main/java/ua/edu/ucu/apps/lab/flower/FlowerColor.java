@@ -16,4 +16,14 @@ public enum FlowerColor {
     public String toString() {
         return stringRepresentation;
     }
+
+    public static FlowerColor toFlowerColor(String color) {
+        if (color == "blue") {
+            return FlowerColor.BLUE;
+        }
+        if (color == "red") {
+            return FlowerColor.RED;
+        }
+        return null;
+    }
 }

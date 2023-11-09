@@ -1,27 +1,30 @@
 package ua.edu.ucu.apps.lab.flower;
 
 import java.util.Map;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @AllArgsConstructor
-// @Entity
+@Entity
 @Getter
 public class Flower {
-    // @Id
+    @Id
+    private int id;
     private FlowerColor color;
     private double price;
     private double sepalLength;
     private FlowerType flowerType;
 
     public Flower(double sepalLength, double price,
-            FlowerColor color, FlowerType flowerType) {
+            FlowerColor color) {
         this.sepalLength = sepalLength;
         this.price = price;
         this.color = color;
-        this.flowerType = flowerType;
     }
 
     public Flower(Flower flower) {
@@ -34,10 +37,9 @@ public class Flower {
 
     public static Flower jsonToFlower(Map<String, Object> json) {
         Flower flower = new Flower(
-                (double) json.get("sepal_length"),
-                (double) json.get("price"),
-                (FlowerColor) json.get("color"),
-                (FlowerType) json.get("type"));
+                ((Number) json.get("sepalLength")).doubleValue(),
+                ((Number) json.get("price")).doubleValue(),
+                FlowerColor.toFlowerColor( (String) json.get("color")));
         return flower;
 
     }

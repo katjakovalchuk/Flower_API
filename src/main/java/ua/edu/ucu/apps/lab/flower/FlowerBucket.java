@@ -44,38 +44,38 @@ public class FlowerBucket {
         flowerPacks.add(flowerPac);
     }
 
-    public static Flower jsonToFlower(Map<String, Object> json) {
-        Flower flower = new Flower((double) json.get("sepal_length"),
-            (double) json.get("price"),
-            (FlowerColor) json.get("color"),
-            (FlowerType) json.get("type"));
-        return flower;
-    }
+    // public static Flower jsonToFlower(Map<String, Object> json) {
+    //     Flower flower = new Flower((double) json.get("sepal_length"),
+    //         (double) json.get("price"),
+    //         (FlowerColor) json.get("color"),
+    //         (FlowerType) json.get("type"));
+    //     return flower;
+    // }
 
-    public static FlowerPack jsonToFlowerPack(Map<String, Object> json) {
-        FlowerPack flowerPack = new FlowerPack(
-        (Flower) jsonToFlower((Map<String, Object>)
-        json.get("flower")),
-        (int) json.get("quantity"));
-        return flowerPack;
-    }
+    // public static FlowerPack jsonToFlowerPack(Map<String, Object> json) {
+    //     FlowerPack flowerPack = new FlowerPack(
+    //     (Flower) jsonToFlower((Map<String, Object>)
+    //     json.get("flower")),
+    //     (int) json.get("quantity"));
+    //     return flowerPack;
+    // }
 
-    public static FlowerBucket jsonToFlowerBucket(Map<String, Object> json) {
-        if (json.get("flower") != null) {
-            FlowerBucket flowerBucket = new FlowerBucket(
-                    (Flower) jsonToFlower(
-                    (Map<String, Object>) json.get("flower")),
-                    (int) json.get("quantity"));
-            return flowerBucket;
-        }
-        if (json.get("flowerBucket") != null) {
-            FlowerBucket flowerBucket = new FlowerBucket(
-                    (FlowerPack) jsonToFlowerPack(
-                    (Map<String, Object>) json.get("flowerPack")),
-                    (int) json.get("quantity"));
-            return flowerBucket;
-        }
-        return null;
-    }
+    // public static FlowerBucket jsonToFlowerBucket(Map<String, Object> json) {
+    //     if (json.get("flower") != null) {
+    //         FlowerBucket flowerBucket = new FlowerBucket(
+    //                 (Flower) jsonToFlower(
+    //                 (Map<String, Object>) json.get("flower")),
+    //                 (int) json.get("quantity"));
+    //         return flowerBucket;
+    //     }
+    //     if (json.get("flowerBucket") != null) {
+    //         FlowerBucket flowerBucket = new FlowerBucket(
+    //                 (FlowerPack) jsonToFlowerPack(
+    //                 (Map<String, Object>) json.get("flowerPack")),
+    //                 (int) json.get("quantity"));
+    //         return flowerBucket;
+    //     }
+    //     return null;
+    // }
 
 }

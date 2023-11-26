@@ -9,8 +9,13 @@ public class PaperDecorator extends AbstractDecorator {
     private Item item;
     private int decoratorPrice = 13;
 
-    public PaperDecorator(Item itemSecond) {
-        super(itemSecond);
+    public PaperDecorator(Item item) {
+        super(item);
+        this.item = item;
+    }
+
+    public PaperDecorator(String description) {
+        super(description);
     }
 
     @Override

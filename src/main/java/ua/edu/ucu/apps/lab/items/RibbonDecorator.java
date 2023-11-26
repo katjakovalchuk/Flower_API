@@ -8,9 +8,14 @@ import lombok.Setter;
 public class RibbonDecorator extends AbstractDecorator {
     private Item item;
     private int decoratorPrice = 40;
+    public RibbonDecorator(Item item) {
+        super(item);
+        this.item = item; 
+    }
 
-    public RibbonDecorator(Item itemSecond) {
-        super(itemSecond);
+
+    public RibbonDecorator(String description) {
+        super(description);
     }
 
     @Override
